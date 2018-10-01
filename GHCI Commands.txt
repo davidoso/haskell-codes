@@ -1,0 +1,30 @@
+References:
+https://downloads.haskell.org/~ghc/7.8.1-rc1/docs/html/users_guide/ghci-commands.html
+http://downloads.haskell.org/~ghc/latest/docs/html/users_guide/ghci.html
+
+
+:load [*]module ... (:l)
+Recursively loads the specified modules, and all the modules they depend on. Here, each module must be a module name or filename, but may not be the name of a module in a package.
+Normally pre-compiled code for a module will be loaded if available, or otherwise the module will be compiled to byte-code. Using the * prefix forces a module to be loaded as byte-code.
+After a :load command, the current context is set to:
+- module, if it was loaded successfully, or
+- the most recently successfully loaded module, if any other modules were loaded as a result of the current :load, or
+- Prelude otherwise.
+
+
+:! command ...
+Executes the shell command command, e.g. :!cls :!dir :!ipconfig
+
+
+:reload (:r)
+Attempts to reload the current target set (see :load) if any of the modules in the set, or any dependent module, has changed. Note that this may entail loading new modules, or dropping modules which are no longer indirectly required by the target.
+
+
+:type expression (:t)
+Infers and prints the type of expression, including explicit forall quantifiers for polymorphic types. The monomorphism restriction is not applied to the expression during type inference.
+
+:module (:m)
+Sets or modifies the current context for statements typed at the prompt, i.e. goes back to Prelude.
+
+:quit (:q)
+Quits GHCi. You can also quit by typing control-D at the prompt.

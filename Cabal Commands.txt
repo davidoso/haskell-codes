@@ -1,0 +1,9 @@
+References:
+https://wiki.haskell.org/Cabal-Install
+https://stackoverflow.com/questions/32077856/is-there-a-way-to-use-cabal-to-keep-haskell-packages-up-to-date
+
+Paths:
+C:\Program Files\Haskell Platform\8.2.2\lib
+C:\Users\David\AppData\Roaming\cabal\packages\hackage.haskell.org
+
+Almost all cabal packages are not dependent on the newest version of a dependency package, but rather a specific version of that dependency. Cabal resolves the dependencies by downloading the required package version not the newest package version.
